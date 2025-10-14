@@ -2,30 +2,28 @@ void	ipssi_putchar(char c);
 
 void	ipssi_rush02(int x, int y)
 {
-	int	ligne;
-	int	colonne;
+	int	l;
+	int	c;
 
-	ligne = 1;
+	l = 1;
 	if (x < 1 || y < 1)
 		return ;
-	while (ligne <= y)
+	while (l <= y)
 	{
-		colonne = 1;
-		while (colonne <= x)
+		c = 1;
+		while (c <= x)
 		{
-			if ((ligne == 1 && colonne == 1) || (ligne == 1 && colonne == x))
+			if ((l == 1 && c == 1) || (l == 1 && c == x))
 				ipssi_putchar('A');
-			else if (ligne == y && colonne == 1)
+			else if ((l == y && c == 1) || (l == y && c == x))
 				ipssi_putchar('C');
-			else if (ligne == y && colonne == x)
-				ipssi_putchar('C');
-			else if (ligne == 1 || ligne == y || colonne == 1 || colonne == x)
+			else if (l == 1 || l == y || c == 1 || c == x)
 				ipssi_putchar('B');
 			else
 				ipssi_putchar(' ');
-			colonne++;
+			c++;
 		}
 		ipssi_putchar('\n');
-		ligne++;
+		l++;
 	}
 }
